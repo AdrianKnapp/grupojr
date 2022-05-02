@@ -16,14 +16,14 @@ export const theme = extendTheme({
     },
   },
   fonts: {
-    heading: 'Roboto',
-    body: 'Roboto',
+    heading: 'Montserrat',
+    body: 'Montserrat',
   },
   styles: {
     global: {
       body: {
-        bg: 'gray.900',
-        color: 'gray.50',
+        bg: 'white',
+        color: 'gray.800',
       },
     },
   },
