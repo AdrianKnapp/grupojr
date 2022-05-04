@@ -1,5 +1,7 @@
+import { Hero } from '../components/banners/Hero';
+
 export default function Home() {
   return (
-    <h1>Page</h1>
+    <Hero />
   );
 }
