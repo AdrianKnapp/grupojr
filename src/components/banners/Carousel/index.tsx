@@ -5,7 +5,7 @@ import { Wave } from './Wave';
 
 export function Carousel() {
   return (
-    <Flex as="section" w={theme.container.width.full} h={400} position="relative" overflow="hidden" background="red">
+    <Flex as="section" w={theme.container.width.full} h={400} position="relative" overflow="hidden">
       <SlickCarousel />
       <Text
         as="h1"
