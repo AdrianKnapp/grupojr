@@ -33,7 +33,7 @@ export const chakraTheme = extendTheme({
       400: '#797D9A',
       300: '#9699B0',
       200: '#B3B5C6',
-      100: '#E5E5E5', // background
+      100: '#EBEBEB', // background
       50: '#EEEEF2',
     },
     blue: {
@@ -47,7 +47,7 @@ export const chakraTheme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'white',
+        bg: 'gray.100',
         color: 'gray.800',
       },
     },

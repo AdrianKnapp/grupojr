@@ -1,12 +1,19 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { theme } from '../../../styles/theme';
+import { BannerImagesProps } from '../../../types/banner';
 import { SlickCarousel } from './SlickCarousel';
 import { Wave } from './Wave';
 
-export function Carousel() {
+type HeroProps = {
+  images: BannerImagesProps[];
+}
+
+export function Hero({ images }: HeroProps) {
+  const BannerHeight = 400;
+
   return (
-    <Flex as="section" w={theme.container.width.full} h={400} position="relative" overflow="hidden">
-      <SlickCarousel />
+    <Flex as="section" w={theme.container.width.full} h={BannerHeight} position="relative" overflow="hidden">
+      <SlickCarousel images={images} height={BannerHeight} />
       <Text
         as="h1"
         zIndex={1}
