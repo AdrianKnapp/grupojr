@@ -9,7 +9,9 @@ type HomeProps = {
 
 export default function Home({ banner }: HomeProps) {
   return (
-    <Hero images={banner.images} />
+    <div>
+      {banner && <Hero images={banner.images} />}
+    </div>
   );
 }
 
