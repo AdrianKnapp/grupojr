@@ -28,7 +28,7 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
         {...settings}
       >
         {images.map(({ id, attributes: { formats }, attributes }) => {
-          const url = formats?.large.url || formats?.medium.url || attributes.url;
+          const url = formats?.large?.url || formats?.medium?.url || attributes.url;
 
           return (
             <Box filter="blur(3px) brightness(50%)" key={id} w="100%" h={height}>
