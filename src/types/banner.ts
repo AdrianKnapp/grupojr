@@ -1,6 +1,7 @@
 export type BannerImagesProps = {
   id: string;
   attributes: {
+    url: string;
     width: number;
     height: number;
     formats: {

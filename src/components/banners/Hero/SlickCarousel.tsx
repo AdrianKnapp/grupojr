@@ -27,16 +27,20 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
       <Slider
         {...settings}
       >
-        {images.map(({ id, attributes: { formats } }) => (
-          <Box filter="blur(3px) brightness(50%)" key={id} w="100%" h={height}>
-            <Image
-              src={formats.large.url}
-              alt="Banner inicial"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
-        ))}
+        {images.map(({ id, attributes: { formats }, attributes }) => {
+          const url = formats?.large.url || formats?.medium.url || attributes.url;
+
+          return (
+            <Box filter="blur(3px) brightness(50%)" key={id} w="100%" h={height}>
+              <Image
+                src={url}
+                alt="Banner inicial"
+                layout="fill"
+                objectFit="cover"
+              />
+            </Box>
+          );
+        })}
       </Slider>
     </Box>
   );
