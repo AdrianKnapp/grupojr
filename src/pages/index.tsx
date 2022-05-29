@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import { Hero } from '../components/banners/Hero';
 import api from '../services/api';
 import { BannerProps } from '../types/banner';
@@ -9,19 +10,27 @@ type HomeProps = {
 
 export default function Home({ banner }: HomeProps) {
   return (
-    <div>
-      {banner && <Hero images={banner.images} />}
-    </div>
+    <>
+      <Head>
+        <title>Postos JR</title>
+      </Head>
+      <div>
+        {banner && <Hero images={banner.images.data} />}
+      </div>
+    </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await api.get('/paginas?name=Home');
-  const [{ banner }] = data;
+  const {
+    data: {
+      data: [{ attributes }],
+    },
+  } = await api.get('pages?name=Home&populate=attractions.images&populate=banner.images');
 
   return {
     props: {
-      banner,
+      banner: attributes.banner.data.attributes,
     },
     revalidate: 60, // 60 seconds
   };

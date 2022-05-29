@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['www.grupopostojr.com.br', 'images.unsplash.com', 'localhost']
+    domains: ['www.grupopostojr.com.br', 'res.cloudinary.com', 'localhost']
   },
 }
 

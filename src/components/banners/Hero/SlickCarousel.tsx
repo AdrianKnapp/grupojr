@@ -9,8 +9,6 @@ type SlickCarouselProps = {
 }
 
 export function SlickCarousel({ images, height }: SlickCarouselProps) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
   const settings = {
     dots: false,
     infinite: true,
@@ -29,10 +27,10 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
       <Slider
         {...settings}
       >
-        {images.map(({ id, formats }) => (
+        {images.map(({ id, attributes: { formats } }) => (
           <Box filter="blur(3px) brightness(50%)" key={id} w="100%" h={height}>
             <Image
-              src={`${API_URL}${formats.large.url}`}
+              src={formats.large.url}
               alt="Banner inicial"
               layout="fill"
               objectFit="cover"
