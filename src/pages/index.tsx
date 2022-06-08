@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { Hero } from '../components/banners/Hero';
+import { PagesList } from '../components/PagesList';
 import api from '../services/api';
 import { BannerProps } from '../types/banner';
 
@@ -14,9 +15,8 @@ export default function Home({ banner }: HomeProps) {
       <Head>
         <title>Postos JR</title>
       </Head>
-      <div>
-        {banner && <Hero images={banner.images.data} />}
-      </div>
+      {banner && <Hero images={banner.images.data} />}
+      <PagesList />
     </>
   );
 }

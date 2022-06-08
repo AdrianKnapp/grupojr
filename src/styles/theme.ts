@@ -23,6 +23,11 @@ export const theme = {
 };
 
 export const chakraTheme = extendTheme({
+  sm: '320px',
+  md: '768px',
+  lg: '950px',
+  xl: '1100px',
+  '2xl': '1600px',
   colors: {
     gray: {
       900: '#181B23',
