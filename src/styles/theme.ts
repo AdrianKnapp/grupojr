@@ -24,9 +24,9 @@ export const theme = {
 
 export const chakraTheme = extendTheme({
   sm: '320px',
-  md: '768px',
-  lg: '950px',
-  xl: '1100px',
+  md: '425px',
+  lg: '768px',
+  xl: '950px',
   '2xl': '1600px',
   colors: {
     gray: {
@@ -35,9 +35,9 @@ export const chakraTheme = extendTheme({
       700: '#353646',
       600: '#4B4D63',
       500: '#616480',
-      400: '#797D9A',
+      400: '#6D6D6D',
       300: '#9699B0',
-      200: '#B3B5C6',
+      200: '#D0D0D0',
       100: '#EBEBEB', // background
       50: '#EEEEF2',
     },
