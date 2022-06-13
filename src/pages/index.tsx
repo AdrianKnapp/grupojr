@@ -22,11 +22,13 @@ export default function Home({ banner }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const PAGES_REQUEST = process.env.NEXT_PUBLIC_PAGES_REQUEST;
+
   const {
     data: {
       data,
     },
-  } = await api.get('pages?slug=home&populate=attractions.images&populate=banner.images');
+  } = await api.get(PAGES_REQUEST);
   const banner = data[0]?.attributes.banner.data?.attributes || null;
 
   return {

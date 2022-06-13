@@ -21,7 +21,7 @@ export type BannerImagesProps = {
 }
 
 export type BannerProps = {
-  title: string;
+  name: string;
   images: {
     data: BannerImagesProps[];
   };
