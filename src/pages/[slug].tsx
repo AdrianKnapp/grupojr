@@ -33,7 +33,9 @@ type ProductComponentProps = {
 };
 
 export default function PetrolStation({ station, banner, attractions }: ProductComponentProps) {
-  return (
+  console.log(attractions);
+
+  return station ? (
     <>
       <Head>
         <title>
@@ -48,14 +50,16 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         <Text as="h1" fontWeight="black" fontSize="xl" py={4}>
           {station.name}
         </Text>
-        <Carousel images={banner.images.data} />
+        {banner && (
+          <Carousel images={banner.images.data} />
+        )}
       </Flex>
     </>
-  );
+  ) : null;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const getProductsSlug = await api.get(PAGES_REQUEST);
+  const getProductsSlug = await api.get('pages');
   const productsSlug = getProductsSlug.data.data.map(({ attributes }) => ({
     params: {
       slug: String(attributes.slug),
@@ -78,8 +82,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   try {
     const getStation = await api.get(`${PAGES_REQUEST}&filters[slug][$eq]=${slug}`);
-    const station: StationProps = getStation.data.data[0].attributes;
-    const banner = station.banner.data.attributes;
+    const station: StationProps = getStation.data.data[0]?.attributes;
+    const banner = station.banner.data?.attributes || null;
     const attractions = station.attractions.data;
 
     stationData = {
