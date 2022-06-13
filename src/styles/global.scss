@@ -1,0 +1,12 @@
+.slick-prev::before, .slick-next::before {
+  color: #252525;
+  font-size: 40px;
+}
+
+.slick-next {
+  right: -30px;
+}
+
+.slick-prev {
+  left: -50px;
+}
