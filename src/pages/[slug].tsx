@@ -1,6 +1,8 @@
+import { Flex, Text } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import api from '../services/api';
+import { theme } from '../styles/theme';
 import { BannerProps } from '../types/banner';
 
 const PAGES_REQUEST = process.env.NEXT_PUBLIC_PAGES_REQUEST;
@@ -30,7 +32,11 @@ export default function PetrolStation({ station }: ProductComponentProps) {
           content={`Venha conhecer o ${station.name} - ${station.local}`}
         />
       </Head>
-      <h1>{station.name}</h1>
+      <Flex w="100%" maxW={theme.container.width.desktop} align="center" px={theme.container.padding.desktop} mx="auto">
+        <Text fontWeight="black" fontSize="xl" py={4}>
+          {station.name}
+        </Text>
+      </Flex>
     </>
   );
 }
