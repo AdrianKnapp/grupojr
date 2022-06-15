@@ -2,14 +2,14 @@ import { Grid, GridItem } from '@chakra-ui/react';
 import { theme } from '../../styles/theme';
 import { PageItem } from './PageItem/index.';
 
-export function PagesList() {
+export function AttractionsList() {
   return (
     <Grid
       templateColumns={[
         'repeat(1, 1fr)',
         'repeat(1, 1fr)',
         'repeat(1, 1fr)',
-        'repeat(2, 1fr)',
+        'repeat(3, 1fr)',
       ]}
       gap={5}
       as="section"

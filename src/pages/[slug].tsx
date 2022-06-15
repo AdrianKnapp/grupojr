@@ -1,6 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { AttractionsList } from '../components/AttractionsList';
 import { Carousel } from '../components/banners/Carousel';
 import api from '../services/api';
 import { theme } from '../styles/theme';
@@ -52,6 +53,9 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         </Text>
         {banner && (
           <Carousel images={banner.images.data} />
+        )}
+        {attractions && (
+          <AttractionsList />
         )}
       </Flex>
     </>
