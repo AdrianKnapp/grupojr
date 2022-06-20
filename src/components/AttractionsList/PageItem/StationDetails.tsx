@@ -1,14 +1,19 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { theme } from '../../../styles/theme';
 
-export function StationDetails() {
+type StationDetailsProps = {
+  name: string;
+  details: string;
+}
+
+export function StationDetails({ name, details }: StationDetailsProps) {
   return (
     <Flex padding={5} direction="column" gap={3}>
       <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={30} textAlign="center">
-        Posto X
+        {name}
       </Text>
       <Text fontWeight="medium">
-        Campo Grande, 32281-189, Vinte e Quatro, 2224.
+        {details}
       </Text>
     </Flex>
   );

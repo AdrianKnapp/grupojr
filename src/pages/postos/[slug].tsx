@@ -57,7 +57,7 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
           <Carousel images={banner.images.data} />
         )}
         {attractions && (
-          <AttractionsList />
+          <AttractionsList attractions={attractions} />
         )}
         <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={8}>
           <StationInfo
