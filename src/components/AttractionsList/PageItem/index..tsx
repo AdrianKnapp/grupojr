@@ -2,10 +2,21 @@ import { Box, Flex, Tooltip } from '@chakra-ui/react';
 import FsLightbox from 'fslightbox-react';
 import { useState } from 'react';
 import { theme } from '../../../styles/theme';
+import { AttractionProps } from '../../../types/attraction';
 import { StationDetails } from './StationDetails';
 import { StationThumb } from './StationThumb';
 
-export function PageItem() {
+type PageItemProps = {
+  attraction: AttractionProps;
+}
+
+export function PageItem({ attraction }: PageItemProps) {
+  const {
+    name,
+    details,
+    images,
+  } = attraction.attributes;
+
   const [toggleViewImage, setToggleViewImage] = useState(false);
 
   return (
@@ -34,16 +45,12 @@ export function PageItem() {
           onClick={() => setToggleViewImage(!toggleViewImage)}
         >
 
-          <StationThumb />
-          <StationDetails />
+          <StationThumb image={images.data[0]} />
+          <StationDetails name={name} details={details} />
         </Flex>
         <FsLightbox
           toggler={toggleViewImage}
-          sources={[
-            'https://i.imgur.com/fsyrScY.jpg',
-            'https://www.youtube.com/watch?v=xshEZzpS4CQ',
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-          ]}
+          sources={images.data.map((image) => image.attributes.url)}
         />
       </Box>
     </Tooltip>

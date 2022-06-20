@@ -1,12 +1,26 @@
 import { Flex } from '@chakra-ui/react';
 import Image from 'next/image';
+import { BannerImagesProps } from '../../../types/banner';
 
-export function StationThumb() {
+type StationThumbType = {
+  image: BannerImagesProps;
+}
+
+export function StationThumb({ image }: StationThumbType) {
+  const {
+    attributes: {
+      formats,
+    },
+    attributes,
+  } = image;
+
+  const imageSrc = formats?.medium?.url || formats?.large?.url || attributes?.url;
+
   return (
     <Flex width="100%" height={300} position="relative">
       <Image
-        src="https://res.cloudinary.com/grupo-jr/image/upload/v1653785459/small_IMG_0206_36_d8cbc3c503.jpg"
-        alt="Posto JR"
+        src={imageSrc}
+        alt="Imagem da atração"
         layout="fill"
         objectFit="cover"
       />

@@ -1,8 +1,13 @@
 import { Grid, GridItem, Text } from '@chakra-ui/react';
 import { theme } from '../../styles/theme';
+import { AttractionProps } from '../../types/attraction';
 import { PageItem } from './PageItem/index.';
 
-export function AttractionsList() {
+type AttractionsListProps = {
+  attractions: AttractionProps[];
+}
+
+export function AttractionsList({ attractions }: AttractionsListProps) {
   return (
     <>
       <Text
@@ -29,18 +34,11 @@ export function AttractionsList() {
         mt={3}
         mx="auto"
       >
-        <GridItem w="100%">
-          <PageItem />
-        </GridItem>
-        <GridItem w="100%">
-          <PageItem />
-        </GridItem>
-        <GridItem w="100%">
-          <PageItem />
-        </GridItem>
-        <GridItem w="100%">
-          <PageItem />
-        </GridItem>
+        {attractions.map((attraction) => (
+          <GridItem w="100%">
+            <PageItem attraction={attraction} />
+          </GridItem>
+        ))}
       </Grid>
     </>
   );
