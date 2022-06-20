@@ -50,7 +50,7 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         />
       </Head>
       <Flex direction="column" w="100%" maxW={theme.container.width.desktop} px={theme.container.padding.desktop} mx="auto">
-        <Text as="h1" fontWeight="black" fontSize="xl" py={4}>
+        <Text as="h1" fontWeight="black" fontSize="3xl" py={4}>
           {station.name}
         </Text>
         {banner && (
