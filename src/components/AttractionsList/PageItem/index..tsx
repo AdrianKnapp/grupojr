@@ -1,12 +1,15 @@
-import { Flex } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, Flex } from '@chakra-ui/react';
+import FsLightbox from 'fslightbox-react';
+import { useState } from 'react';
 import { theme } from '../../../styles/theme';
 import { StationDetails } from './StationDetails';
 import { StationThumb } from './StationThumb';
 
 export function PageItem() {
+  const [toggleViewImage, setToggleViewImage] = useState(false);
+
   return (
-    <Link href="/">
+    <>
       <Flex
         borderRadius={5}
         borderWidth={3}
@@ -22,9 +25,19 @@ export function PageItem() {
         }}
         direction="column"
       >
-        <StationThumb />
+        <Box onClick={() => setToggleViewImage(!toggleViewImage)}>
+          <StationThumb />
+        </Box>
         <StationDetails />
       </Flex>
-    </Link>
+      <FsLightbox
+        toggler={toggleViewImage}
+        sources={[
+          'https://i.imgur.com/fsyrScY.jpg',
+          'https://www.youtube.com/watch?v=xshEZzpS4CQ',
+          'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        ]}
+      />
+    </>
   );
 }
