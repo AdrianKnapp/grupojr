@@ -1,8 +1,11 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, SimpleGrid, Text } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { BiMap } from 'react-icons/bi';
+import { RiWhatsappLine } from 'react-icons/ri';
 import { AttractionsList } from '../components/AttractionsList';
 import { Carousel } from '../components/banners/Carousel';
+import { StationInfo } from '../components/StationInfo ';
 import api from '../services/api';
 import { theme } from '../styles/theme';
 import { AttractionProps } from '../types/attraction';
@@ -15,6 +18,7 @@ type StationProps = {
   slug: string;
   name: string;
   local: string;
+  contact: string;
   banner: {
     data: {
       attributes: BannerProps;
@@ -34,8 +38,6 @@ type ProductComponentProps = {
 };
 
 export default function PetrolStation({ station, banner, attractions }: ProductComponentProps) {
-  console.log(attractions);
-
   return station ? (
     <>
       <Head>
@@ -57,6 +59,18 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         {attractions && (
           <AttractionsList />
         )}
+        <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={8}>
+          <StationInfo
+            title="Localização"
+            description={station.local}
+            icon={<BiMap fontSize={30} color={theme.colors.text} />}
+          />
+          <StationInfo
+            title="Contato"
+            description={station.contact}
+            icon={<RiWhatsappLine fontSize={30} color={theme.colors.text} />}
+          />
+        </SimpleGrid>
       </Flex>
     </>
   ) : null;

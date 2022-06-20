@@ -17,7 +17,6 @@ export function AttractionsList() {
       h="auto"
       w="100%"
       maxW={theme.container.width.desktop}
-      px={theme.container.padding.desktop}
       mt={8}
       mx="auto"
     >
