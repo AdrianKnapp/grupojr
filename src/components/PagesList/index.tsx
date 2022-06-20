@@ -26,10 +26,10 @@ export function PagesList({ pages }: PagesListProps) {
       mt={8}
       mx="auto"
     >
-      {pages.map((page) => (
-        <GridItem w="100%" key={page.id}>
-          <PageItem page={page} />
-        </GridItem>
+      {pages.map((page) => page.attributes.name.toUpperCase() !== 'HOME' && (
+      <GridItem w="100%" key={page.id}>
+        <PageItem page={page} />
+      </GridItem>
       ))}
     </Grid>
   );

@@ -3,13 +3,13 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { BiMap } from 'react-icons/bi';
 import { RiWhatsappLine } from 'react-icons/ri';
-import { AttractionsList } from '../components/AttractionsList';
-import { Carousel } from '../components/banners/Carousel';
-import { StationInfo } from '../components/StationInfo ';
-import api from '../services/api';
-import { theme } from '../styles/theme';
-import { AttractionProps } from '../types/attraction';
-import { BannerProps } from '../types/banner';
+import { AttractionsList } from '../../components/AttractionsList';
+import { Carousel } from '../../components/banners/Carousel';
+import { StationInfo } from '../../components/StationInfo ';
+import api from '../../services/api';
+import { theme } from '../../styles/theme';
+import { AttractionProps } from '../../types/attraction';
+import { BannerProps } from '../../types/banner';
 
 const PAGES_REQUEST = process.env.NEXT_PUBLIC_PAGES_REQUEST;
 

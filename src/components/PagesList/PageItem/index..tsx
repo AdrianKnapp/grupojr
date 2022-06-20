@@ -16,7 +16,7 @@ export function PageItem({ page }: PageItemProps) {
   const [image] = banner.data.attributes.images.data;
 
   return (
-    <Link href={slug}>
+    <Link href={`/postos/${slug}`}>
       <Flex
         borderRadius={5}
         borderWidth={3}
