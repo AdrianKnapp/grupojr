@@ -38,6 +38,8 @@ type ProductComponentProps = {
 };
 
 export default function PetrolStation({ station, banner, attractions }: ProductComponentProps) {
+  const bannerImages = banner.images.data;
+
   return station ? (
     <>
       <Head>
@@ -53,10 +55,10 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         <Text as="h1" fontWeight="black" fontSize="3xl" py={4}>
           {station.name}
         </Text>
-        {banner && (
-          <Carousel images={banner.images.data} />
+        {bannerImages && (
+          <Carousel images={bannerImages} />
         )}
-        {attractions && (
+        {attractions.length > 0 && (
           <AttractionsList attractions={attractions} />
         )}
         <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={8}>
