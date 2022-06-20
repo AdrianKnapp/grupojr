@@ -13,7 +13,8 @@ export function PageItem({ page }: PageItemProps) {
   const {
     slug, name, local, banner,
   } = page.attributes;
-  const [image] = banner.data.attributes.images.data;
+  const bannerImages = banner.data.attributes.images.data;
+  const [firstBannerImage] = bannerImages || [];
 
   return (
     <Link href={`/postos/${slug}`}>
@@ -31,7 +32,7 @@ export function PageItem({ page }: PageItemProps) {
           transform: 'translateY(-5px)',
         }}
       >
-        <PageThumb image={image} />
+        {firstBannerImage && <PageThumb image={firstBannerImage} />}
         <PageDetails name={name} local={local} />
       </Flex>
     </Link>
