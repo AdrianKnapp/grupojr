@@ -1,12 +1,22 @@
 import { Flex } from '@chakra-ui/react';
 import Link from 'next/link';
 import { theme } from '../../../styles/theme';
+import { PageProps } from '../../../types/pages';
 import { PageDetails } from './PageDetails';
 import { PageThumb } from './PageThumb';
 
-export function PageItem() {
+type PageItemProps = {
+  page: PageProps;
+}
+
+export function PageItem({ page }: PageItemProps) {
+  const {
+    slug, name, local, banner,
+  } = page.attributes;
+  const [image] = banner.data.attributes.images.data;
+
   return (
-    <Link href="/">
+    <Link href={slug}>
       <Flex
         borderRadius={5}
         borderWidth={3}
@@ -21,8 +31,8 @@ export function PageItem() {
           transform: 'translateY(-5px)',
         }}
       >
-        <PageThumb />
-        <PageDetails />
+        <PageThumb image={image} />
+        <PageDetails name={name} local={local} />
       </Flex>
     </Link>
   );

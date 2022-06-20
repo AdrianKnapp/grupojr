@@ -1,8 +1,13 @@
 import { Grid, GridItem } from '@chakra-ui/react';
 import { theme } from '../../styles/theme';
+import { PageProps } from '../../types/pages';
 import { PageItem } from './PageItem/index.';
 
-export function PagesList() {
+type PagesListProps = {
+  pages: PageProps[];
+}
+
+export function PagesList({ pages }: PagesListProps) {
   return (
     <Grid
       templateColumns={[
@@ -21,18 +26,11 @@ export function PagesList() {
       mt={8}
       mx="auto"
     >
-      <GridItem w="100%">
-        <PageItem />
-      </GridItem>
-      <GridItem w="100%">
-        <PageItem />
-      </GridItem>
-      <GridItem w="100%">
-        <PageItem />
-      </GridItem>
-      <GridItem w="100%">
-        <PageItem />
-      </GridItem>
+      {pages.map((page) => (
+        <GridItem w="100%" key={page.id}>
+          <PageItem page={page} />
+        </GridItem>
+      ))}
     </Grid>
   );
 }

@@ -15,6 +15,11 @@ export type BannerImagesProps = {
         url: string;
         width: number;
         height: number;
+      },
+      thumbnail: {
+        url: string;
+        width: number;
+        height: number;
       }
     }
   }

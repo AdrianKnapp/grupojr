@@ -1,12 +1,25 @@
 import { Flex } from '@chakra-ui/react';
 import Image from 'next/image';
+import { BannerImagesProps } from '../../../types/banner';
 
-export function PageThumb() {
+type PageThumbProps = {
+  image: BannerImagesProps;
+}
+
+export function PageThumb({ image }: PageThumbProps) {
+  const {
+    attributes: {
+      formats,
+    },
+    attributes,
+  } = image;
+  const imageSrc = formats?.medium?.url || formats?.large?.url || attributes?.url;
+
   return (
-    <Flex width={300} height={200} position="relative">
+    <Flex width={250} height={200} position="relative">
       <Image
-        src="https://res.cloudinary.com/grupo-jr/image/upload/v1653785459/small_IMG_0206_36_d8cbc3c503.jpg"
-        alt="Posto JR"
+        src={imageSrc}
+        alt="Imagem do posto"
         layout="fill"
         objectFit="cover"
       />
