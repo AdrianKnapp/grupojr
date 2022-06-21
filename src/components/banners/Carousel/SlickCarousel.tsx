@@ -10,7 +10,7 @@ type SlickCarouselProps = {
 
 export function SlickCarousel({ images, height }: SlickCarouselProps) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -32,6 +32,7 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
       ]}
       h="100%"
       mx="auto"
+      className="banner-carousel"
     >
       <Slider
         {...settings}
