@@ -35,7 +35,7 @@ export function AttractionsList({ attractions }: AttractionsListProps) {
         mx="auto"
       >
         {attractions.map((attraction) => (
-          <GridItem w="100%">
+          <GridItem w="100%" key={attraction.id}>
             <PageItem attraction={attraction} />
           </GridItem>
         ))}
