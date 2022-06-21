@@ -38,7 +38,7 @@ type ProductComponentProps = {
 };
 
 export default function PetrolStation({ station, banner, attractions }: ProductComponentProps) {
-  const bannerImages = banner.images.data;
+  const bannerImages = banner?.images?.data;
 
   return station ? (
     <>
