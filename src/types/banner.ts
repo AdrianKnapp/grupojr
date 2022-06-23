@@ -4,19 +4,19 @@ export type BannerImagesProps = {
     url: string;
     width: number;
     height: number;
-    formats: {
-      large: {
+    formats?: {
+      large?: {
         url: string;
         width: number;
         height: number;
       }
       ,
-      medium: {
+      medium?: {
         url: string;
         width: number;
         height: number;
       },
-      thumbnail: {
+      thumbnail?: {
         url: string;
         width: number;
         height: number;

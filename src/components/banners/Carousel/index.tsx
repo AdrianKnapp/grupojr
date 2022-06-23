@@ -6,11 +6,18 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 
 type HeroProps = {
   images: BannerImagesProps[];
+  customDesktopHeight?: number;
+  customMobileHeight?: number;
 }
 
-export function Carousel({ images }: HeroProps) {
+export function Carousel({
+  images,
+  customDesktopHeight = 300,
+  customMobileHeight = 200,
+}: HeroProps) {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
-  const BannerHeight = !isMobile ? 300 : 200;
+
+  const BannerHeight = !isMobile ? customDesktopHeight : customMobileHeight;
 
   return (
     <Flex as="section" w={theme.container.width.full} h={BannerHeight} position="relative" overflow="hidden">

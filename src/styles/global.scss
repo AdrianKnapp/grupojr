@@ -1,5 +1,4 @@
 .banner-carousel .slick-list {
-  height: 300px !important;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -11,6 +10,7 @@
 
 .slick-next {
   right: -30px;
+  z-index: 9999;
 }
 
 .slick-prev {
