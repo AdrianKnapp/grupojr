@@ -7,9 +7,12 @@ import { theme } from '../../styles/theme';
 interface ActiveLinkProps extends LinkProps {
   children: ReactElement;
   shouldMatchExactHref?: boolean;
+  isMobile?: boolean;
 }
 
-export function ActiveLink({ children, shouldMatchExactHref = false, ...rest }: ActiveLinkProps) {
+export function ActiveLink({
+  children, shouldMatchExactHref = false, isMobile, ...rest
+}: ActiveLinkProps) {
   const { pathname } = useRouter();
   let isActive = false;
 
@@ -23,7 +26,7 @@ export function ActiveLink({ children, shouldMatchExactHref = false, ...rest }: 
     isActive = true;
   }
 
-  const activeLinkBar = isActive ? {
+  const activeLinkBar = isActive && !isMobile ? {
     content: '""',
     position: 'absolute',
     width: '100%',
