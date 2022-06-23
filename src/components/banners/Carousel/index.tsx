@@ -1,7 +1,8 @@
-import { Flex, useMediaQuery } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { theme } from '../../../styles/theme';
 import { BannerImagesProps } from '../../../types/banner';
 import { SlickCarousel } from './SlickCarousel';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 
 type HeroProps = {
   images: BannerImagesProps[];

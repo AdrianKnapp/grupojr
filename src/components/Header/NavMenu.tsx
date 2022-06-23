@@ -1,9 +1,10 @@
 import {
-  Flex, IconButton, ListItem, Menu, MenuButton, MenuList, UnorderedList, useMediaQuery,
+  Flex, IconButton, ListItem, Menu, MenuButton, MenuList, UnorderedList,
 } from '@chakra-ui/react';
 import { CgMenu } from 'react-icons/cg';
 import { theme } from '../../styles/theme';
 import { ActiveLink } from '../ActiveLink';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 type menuItem = {
   text: string;

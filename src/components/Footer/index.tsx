@@ -1,10 +1,11 @@
 import {
-  Box, Flex, Spacer, useMediaQuery,
+  Box, Flex, Spacer,
 } from '@chakra-ui/react';
 import { theme } from '../../styles/theme';
 import { Credits } from './Credits';
 import { Left } from './side/Left';
 import { Right } from './side/Right';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 export function Footer() {
   const [isMobile] = useMediaQuery('(max-width: 950px)');

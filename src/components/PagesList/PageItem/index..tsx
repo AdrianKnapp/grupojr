@@ -1,5 +1,6 @@
-import { Flex, useMediaQuery } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Link from 'next/link';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 import { theme } from '../../../styles/theme';
 import { PageProps } from '../../../types/pages';
 import { PageDetails } from './PageDetails';
