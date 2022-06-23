@@ -16,8 +16,8 @@ export const theme = {
     padding: {
       full: 0,
       desktop: 6,
-      tablet: 6,
-      mobile: 6,
+      tablet: 4,
+      mobile: 2,
     },
   },
 };

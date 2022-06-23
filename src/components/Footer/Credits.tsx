@@ -9,7 +9,11 @@ export function Credits() {
       width="100%"
       maxW={theme.container.width.desktop}
       mx="auto"
-      px={theme.container.padding.desktop}
+      px={[
+        theme.container.padding.mobile,
+        theme.container.padding.mobile,
+        theme.container.padding.desktop,
+      ]}
       direction={[
         'column',
         'column',

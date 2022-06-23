@@ -22,7 +22,11 @@ export function PagesList({ pages }: PagesListProps) {
       h="auto"
       w="100%"
       maxW={theme.container.width.desktop}
-      px={theme.container.padding.desktop}
+      px={[
+        theme.container.padding.mobile,
+        theme.container.padding.mobile,
+        theme.container.padding.desktop,
+      ]}
       mt={8}
       mx="auto"
     >

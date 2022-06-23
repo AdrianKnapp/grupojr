@@ -51,7 +51,17 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
           content={`Venha conhecer o ${station.name} - ${station.local}`}
         />
       </Head>
-      <Flex direction="column" w="100%" maxW={theme.container.width.desktop} px={theme.container.padding.desktop} mx="auto">
+      <Flex
+        direction="column"
+        w="100%"
+        maxW={theme.container.width.desktop}
+        px={[
+          theme.container.padding.mobile,
+          theme.container.padding.mobile,
+          theme.container.padding.desktop,
+        ]}
+        mx="auto"
+      >
         <Text as="h1" fontWeight="black" fontSize="3xl" py={4}>
           {station.name}
         </Text>
