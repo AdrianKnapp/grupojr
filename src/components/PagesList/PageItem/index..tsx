@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, useMediaQuery } from '@chakra-ui/react';
 import Link from 'next/link';
 import { theme } from '../../../styles/theme';
 import { PageProps } from '../../../types/pages';
@@ -10,6 +10,8 @@ type PageItemProps = {
 }
 
 export function PageItem({ page }: PageItemProps) {
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
+
   const {
     slug, name, local, banner,
   } = page.attributes;
@@ -31,8 +33,9 @@ export function PageItem({ page }: PageItemProps) {
           borderColor: theme.colors.highlight,
           transform: 'translateY(-5px)',
         }}
+        direction={isMobile ? 'column' : 'row'}
       >
-        {firstBannerImage && <PageThumb image={firstBannerImage} />}
+        {firstBannerImage && <PageThumb isMobile={isMobile} image={firstBannerImage} />}
         <PageDetails name={name} local={local} />
       </Flex>
     </Link>
