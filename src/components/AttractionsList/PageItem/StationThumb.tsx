@@ -17,7 +17,15 @@ export function StationThumb({ image }: StationThumbType) {
   const imageSrc = formats?.medium?.url || formats?.large?.url || attributes?.url;
 
   return (
-    <Flex width="100%" height={300} position="relative">
+    <Flex
+      width="100%"
+      height={[
+        150,
+        230,
+        300,
+      ]}
+      position="relative"
+    >
       <Image
         src={imageSrc}
         alt="Imagem da atração"

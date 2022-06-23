@@ -20,12 +20,16 @@ export function AttractionsList({ attractions }: AttractionsListProps) {
       </Text>
       <Grid
         templateColumns={[
-          'repeat(1, 1fr)',
-          'repeat(1, 1fr)',
-          'repeat(1, 1fr)',
+          'repeat(2, 1fr)',
+          'repeat(2, 1fr)',
+          'repeat(2, 1fr)',
           'repeat(3, 1fr)',
         ]}
-        gap={5}
+        gap={[
+          2,
+          3,
+          5,
+        ]}
         as="section"
         id="postos"
         h="auto"

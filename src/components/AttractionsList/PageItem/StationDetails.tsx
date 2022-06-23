@@ -8,11 +8,23 @@ type StationDetailsProps = {
 
 export function StationDetails({ name, details }: StationDetailsProps) {
   return (
-    <Flex padding={5} direction="column" gap={3}>
-      <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={30} textAlign="center">
+    <Flex
+      padding={[
+        2,
+        3,
+        5,
+      ]}
+      direction="column"
+      gap={[
+        0,
+        2,
+        3,
+      ]}
+    >
+      <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[20, 25, 30]} textAlign="center">
         {name}
       </Text>
-      <Text fontWeight="medium">
+      <Text fontWeight="medium" fontSize={[12, 14, 16]}>
         {details}
       </Text>
     </Flex>
