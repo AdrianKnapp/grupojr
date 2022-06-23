@@ -31,12 +31,16 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
           const url = formats?.large?.url || formats?.medium?.url || attributes.url;
 
           return (
-            <Box filter="blur(3px) brightness(50%)" key={id} w="100%" h={height}>
+            <Box position="relative" key={id} w="100%" h={height}>
               <Image
                 src={url}
                 alt="Banner inicial"
                 layout="fill"
                 objectFit="cover"
+                style={{
+                  transform: 'scale(1.1)',
+                  filter: 'blur(3px) brightness(50%)',
+                }}
               />
             </Box>
           );

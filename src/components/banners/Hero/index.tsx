@@ -22,8 +22,16 @@ export function Hero({ images }: HeroProps) {
         left="50%"
         transform="translate(-50%, -50%)"
         color="white"
-        fontSize={50}
+        fontSize={[
+          35,
+          50,
+        ]}
+        width={[
+          '90%',
+          '80%',
+        ]}
         fontWeight="extrabold"
+        textAlign="center"
       >
         Conheça nossos postos
       </Text>
