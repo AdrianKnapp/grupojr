@@ -25,11 +25,7 @@ export function Footer() {
         w="100%"
         maxW={theme.container.width.desktop}
         align="start"
-        px={[
-          theme.container.padding.mobile,
-          theme.container.padding.mobile,
-          theme.container.padding.desktop,
-        ]}
+        px={theme.container.padding.desktop}
         py={5}
         direction={[
           'column',
