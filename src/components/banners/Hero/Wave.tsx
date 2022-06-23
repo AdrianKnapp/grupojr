@@ -1,9 +1,13 @@
+import useMediaQuery from '../../../hooks/useMediaQuery';
+
 export function Wave() {
+  const [isMobile] = useMediaQuery('(max-width: 600px)');
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
-      height="90px"
+      height={!isMobile ? '90px' : '60px'}
       width="120%"
       preserveAspectRatio="none"
       style={{
