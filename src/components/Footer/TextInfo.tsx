@@ -8,9 +8,17 @@ type TextInfoProps = {
 export function TextInfo({ children }: TextInfoProps) {
   return (
     <Text
-      lineHeight="1.8rem"
+      lineHeight={[
+        '1.3rem',
+        '1.5rem',
+        '1.8rem',
+      ]}
       fontWeight="medium"
-      fontSize="md"
+      fontSize={[
+        'xs',
+        'sm',
+        'md',
+      ]}
     >
       {children}
     </Text>

@@ -20,12 +20,12 @@ export function Credits() {
         'row',
       ]}
     >
-      <Text color="gray.200" fontSize="sm" textAlign="center">
+      <Text color="gray.200" fontSize={['xs', 'sm', 'sm']} textAlign="center">
         Postos JR - Todos os direitos reservados
       </Text>
       <Link href="https://flow.page/adrianknapp" passHref>
         <a target="_blank">
-          <Text color="gray.200" fontSize="sm" cursor="pointer" textDecoration="underline" textAlign="center">
+          <Text color="gray.200" fontSize={['xs', 'sm', 'sm']} cursor="pointer" textDecoration="underline" textAlign="center">
             Desenvolvido por Adrian Knapp
           </Text>
         </a>

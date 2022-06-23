@@ -9,8 +9,16 @@ export function Header({ children }: HeaderProps) {
   return (
     <Text
       fontWeight="bold"
-      fontSize="2xl"
-      mb={5}
+      fontSize={[
+        'lg',
+        'xl',
+        '2xl',
+      ]}
+      mb={[
+        1,
+        3,
+        5,
+      ]}
     >
       {children}
     </Text>
