@@ -1,5 +1,5 @@
 import {
-  Flex, IconButton, ListItem, Menu, MenuButton, MenuList, UnorderedList,
+  Flex, IconButton, ListItem, Menu, MenuButton, MenuItem, MenuList, UnorderedList,
 } from '@chakra-ui/react';
 import { CgMenu } from 'react-icons/cg';
 import { theme } from '../../styles/theme';
@@ -62,10 +62,18 @@ export function NavMenu() {
       </ListItem>
     );
 
-    return (
+    const individualItem = (
       <ActiveLink href={href} key={href} shouldMatchExactHref isMobile={isMobile}>
         { listItem }
       </ActiveLink>
+    );
+
+    return isMobile ? (
+      <MenuItem key={href} _focus={{ background: 'white' }}>
+        { individualItem }
+      </MenuItem>
+    ) : (
+      individualItem
     );
   });
 
@@ -80,18 +88,23 @@ export function NavMenu() {
   const MobileMenu = (
     <Flex h="100%" align="center">
       <Menu>
-        <MenuButton
-          as={IconButton}
-          aria-label="Options"
-          icon={<CgMenu />}
-          variant="outline"
-          fontSize={24}
-        />
-        <MenuList zIndex={2} boxShadow=" 0px 0px 10px 0px rgba(0,0,0,0.3)">
-          <UnorderedList>
-            {getMenuItems()}
-          </UnorderedList>
-        </MenuList>
+        {({ isOpen }) => (
+          <>
+            <MenuButton
+              as={IconButton}
+              isActive={isOpen}
+              aria-label="Options"
+              icon={<CgMenu />}
+              variant="outline"
+              fontSize={24}
+            />
+            <MenuList zIndex={2} boxShadow=" 0px 0px 10px 0px rgba(0,0,0,0.3)">
+              <UnorderedList margin={0}>
+                {getMenuItems()}
+              </UnorderedList>
+            </MenuList>
+          </>
+        )}
       </Menu>
     </Flex>
   );
