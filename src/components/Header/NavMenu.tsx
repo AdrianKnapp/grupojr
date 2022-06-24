@@ -69,7 +69,7 @@ export function NavMenu() {
     );
 
     return isMobile ? (
-      <MenuItem key={href} _focus={{ background: 'white' }}>
+      <MenuItem key={href} _focus={{ background: 'white' }} w="100%" className="menuMobileItem">
         { individualItem }
       </MenuItem>
     ) : (
@@ -99,7 +99,7 @@ export function NavMenu() {
               fontSize={24}
             />
             <MenuList zIndex={2} boxShadow=" 0px 0px 10px 0px rgba(0,0,0,0.3)">
-              <UnorderedList margin={0}>
+              <UnorderedList margin={0} w="100%">
                 {getMenuItems()}
               </UnorderedList>
             </MenuList>
