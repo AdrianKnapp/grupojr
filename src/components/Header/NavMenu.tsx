@@ -109,5 +109,7 @@ export function NavMenu() {
     </Flex>
   );
 
+  if (isMobile === null) return null;
+
   return !isMobile ? desktopMenu : MobileMenu;
 }
