@@ -16,17 +16,17 @@ export function PagesList({ pages }: PagesListProps) {
         'repeat(1, 1fr)',
         'repeat(2, 1fr)',
       ]}
-      gap={5}
+      gap={[
+        3,
+        3,
+        5,
+      ]}
       as="section"
       id="postos"
       h="auto"
       w="100%"
       maxW={theme.container.width.desktop}
-      px={[
-        theme.container.padding.mobile,
-        theme.container.padding.mobile,
-        theme.container.padding.desktop,
-      ]}
+      px={theme.container.padding.desktop}
       mt={8}
       mx="auto"
     >
