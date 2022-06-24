@@ -16,7 +16,7 @@ export function PageItem({ page }: PageItemProps) {
   const {
     slug, name, local, banner,
   } = page.attributes;
-  const bannerImages = banner.data.attributes.images.data;
+  const bannerImages = banner?.data?.attributes?.images.data;
   const [firstBannerImage] = bannerImages || [];
 
   return (
