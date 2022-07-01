@@ -132,6 +132,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       banner: stationData.banner,
       attractions: stationData.attractions,
     },
-    redirect: 60, // 60 seconds
+    revalidate: 60, // 60 seconds
   };
 };
