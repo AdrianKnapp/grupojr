@@ -44,11 +44,11 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
     <>
       <Head>
         <title>
-          {`${station.name} - Grupo JR`}
+          {`${station.name} | Grupo JR`}
         </title>
         <meta
           name="description"
-          content={`Venha conhecer o ${station.name} - ${station.local}`}
+          content={`GRUPO JR - Conheça o ${station.name} - ${station.local}`}
         />
       </Head>
       <Flex
