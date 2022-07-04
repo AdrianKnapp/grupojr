@@ -19,5 +19,6 @@ export type PageProps = {
     thumbnail: {
       data: ThumbnailProps;
     };
+    socialmedia: string;
   }
 }

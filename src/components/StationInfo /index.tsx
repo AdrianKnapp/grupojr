@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 type StationInfoProps = {
   title: string;
-  description: string;
+  description: string | ReactNode;
   icon: ReactNode;
 }
 
