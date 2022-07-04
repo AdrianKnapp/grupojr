@@ -9,20 +9,17 @@ export function Left() {
         Grupo JR
       </Header>
       <TextInfo>
-        REDE JR COMBUSTIVEIS LTDA.
-      </TextInfo>
-      <TextInfo>
-        CNPJ: 14.325.976/0001-40
+        Grupo de Postos JR
       </TextInfo>
       <Spacer mt={5} />
       <TextInfo>
-        R. Alm. Barroso, 2360;
+        Av. Major Barbosa, S/N, Centro.
       </TextInfo>
       <TextInfo>
-        CEP: 87054-240
+        CEP: 29.460-000
       </TextInfo>
       <TextInfo>
-        Campo Grande, MS
+        Bom Jesus do Norte - ES.
       </TextInfo>
     </Flex>
   );

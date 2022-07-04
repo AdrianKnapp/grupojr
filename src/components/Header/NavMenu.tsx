@@ -29,7 +29,7 @@ export function NavMenu() {
     },
     {
       text: 'Controle de frotas',
-      href: '/controle-de-frotas',
+      href: 'https://qualityautomacao.com.br/webfrota/#/login',
     },
   ];
 

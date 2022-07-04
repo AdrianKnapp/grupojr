@@ -17,7 +17,7 @@ export function PageThumb({ image, isMobile }: PageThumbProps) {
   const imageSrc = formats?.medium?.url || formats?.large?.url || attributes?.url;
 
   return (
-    <Flex width={isMobile ? '100%' : 250} height={200} position="relative">
+    <Flex width={isMobile ? '100%' : 220} minWidth={220} height={220} position="relative">
       <Image
         src={imageSrc}
         alt="Imagem do posto"

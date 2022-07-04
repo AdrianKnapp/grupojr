@@ -1,7 +1,7 @@
 import { Flex, Spacer } from '@chakra-ui/react';
+import Link from 'next/link';
 import { Header } from '../Header';
 import { TextInfo } from '../TextInfo';
-import { IconsBox } from './IconsBox';
 
 export function Right() {
   return (
@@ -10,16 +10,20 @@ export function Right() {
         Contatos
       </Header>
       <TextInfo>
-        Telefone: +55 (81) 3279-4559
+        Telefone e Whatsapp: (22) 99981-0383
       </TextInfo>
       <TextInfo>
-        Whatsapp comercial: +55 (81) 9 8472-23-04
-      </TextInfo>
-      <TextInfo>
-        E-mail: suporte@postojr.com.br
+        E-mail: escritoriobj.postos@hotmail.com
       </TextInfo>
       <Spacer mt={5} />
-      <IconsBox />
+      {/* <IconsBox /> */}
+      <Link href="https://linktr.ee/grupo.jr" passHref>
+        <a target="_blank">
+          <TextInfo textDecoration="underline">
+            Conheça nossas redes sociais
+          </TextInfo>
+        </a>
+      </Link>
     </Flex>
   );
 }
