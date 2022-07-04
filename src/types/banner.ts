@@ -1,4 +1,4 @@
-type FormatsModel = {
+type FormatsProps = {
   large?: {
     url: string;
     width: number;
@@ -17,14 +17,16 @@ type FormatsModel = {
   }
 }
 
+export type BannerAttributesProps = {
+  url: string;
+  width: number;
+  height: number;
+  formats?: FormatsProps;
+}
+
 export type BannerImagesProps = {
   id: string;
-  attributes: {
-    url: string;
-    width: number;
-    height: number;
-    formats?: FormatsModel;
-  }
+  attributes: BannerAttributesProps;
 }
 
 export type BannerProps = {
@@ -36,10 +38,5 @@ export type BannerProps = {
 
 export type ThumbnailProps = {
   id: string;
-  attributes: {
-    url: string;
-    width: number;
-    height: number;
-    formats?: FormatsModel;
-  }
+  attributes: BannerAttributesProps;
 }
