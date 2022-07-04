@@ -3,9 +3,10 @@ import React from 'react';
 
 type TextInfoProps = {
   children: React.ReactNode;
+  [x:string]: any;
 }
 
-export function TextInfo({ children }: TextInfoProps) {
+export function TextInfo({ children, ...props }: TextInfoProps) {
   return (
     <Text
       lineHeight={[
@@ -19,6 +20,7 @@ export function TextInfo({ children }: TextInfoProps) {
         'sm',
         'md',
       ]}
+      {...props}
     >
       {children}
     </Text>
