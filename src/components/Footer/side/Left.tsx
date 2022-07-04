@@ -13,7 +13,7 @@ export function Left() {
       </TextInfo>
       <Spacer mt={5} />
       <TextInfo>
-        Av. Major Barbosa, S/N, Centro.
+        Av. Major Barbosa, S/N, Centro. Sala 106.
       </TextInfo>
       <TextInfo>
         CEP: 29.460-000
