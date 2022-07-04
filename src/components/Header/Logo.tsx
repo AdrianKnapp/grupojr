@@ -7,10 +7,10 @@ export function Logo() {
     <Link href="/">
       <Box w={20} cursor="pointer">
         <Image
-          src="http://www.grupopostojr.com.br/images/logo.png"
+          src="/logo.png"
           alt="Logo"
-          width={937}
-          height={663}
+          width={1164}
+          height={662}
           layout="responsive"
         />
       </Box>
