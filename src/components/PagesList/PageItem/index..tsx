@@ -19,7 +19,7 @@ export function PageItem({ page }: PageItemProps) {
 
   const bannerImages = banner?.data?.attributes?.images.data;
   const [firstBannerImage] = bannerImages || [];
-  const thumb = thumbnail.data;
+  const thumb = thumbnail?.data;
 
   return (
     <Link href={`/postos/${slug}`}>
