@@ -45,13 +45,15 @@ export function PageItem({ attraction }: PageItemProps) {
           onClick={() => setToggleViewImage(!toggleViewImage)}
         >
 
-          <StationThumb image={images.data[0]} />
+          {images?.data && <StationThumb image={images.data[0]} />}
           <StationDetails name={name} details={details} />
         </Flex>
-        <FsLightbox
-          toggler={toggleViewImage}
-          sources={images.data.map((image) => image.attributes.url)}
-        />
+        {images?.data && (
+          <FsLightbox
+            toggler={toggleViewImage}
+            sources={images.data.map((image) => image.attributes.url)}
+          />
+        )}
       </Box>
     </Tooltip>
   );
