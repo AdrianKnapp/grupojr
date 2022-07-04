@@ -14,10 +14,12 @@ export function PageItem({ page }: PageItemProps) {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
 
   const {
-    slug, name, local, banner,
+    slug, name, local, banner, thumbnail,
   } = page.attributes;
+
   const bannerImages = banner?.data?.attributes?.images.data;
   const [firstBannerImage] = bannerImages || [];
+  const thumb = thumbnail?.data;
 
   return (
     <Link href={`/postos/${slug}`}>
@@ -36,7 +38,7 @@ export function PageItem({ page }: PageItemProps) {
         }}
         direction={isMobile ? 'column' : 'row'}
       >
-        {firstBannerImage && <PageThumb isMobile={isMobile} image={firstBannerImage} />}
+        {firstBannerImage && <PageThumb isMobile={isMobile} image={thumb || firstBannerImage} />}
         <PageDetails name={name} local={local} />
       </Flex>
     </Link>

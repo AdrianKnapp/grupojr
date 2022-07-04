@@ -31,6 +31,7 @@ export function ActiveLink({
     position: 'absolute',
     width: '100%',
     height: '3px',
+    borderRadius: '10px 10px 0 0',
     bg: theme.colors.highlight,
     opacity: '1',
     bottom: '0',
