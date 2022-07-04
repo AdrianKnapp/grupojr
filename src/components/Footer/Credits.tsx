@@ -21,7 +21,7 @@ export function Credits() {
       ]}
     >
       <Text color="gray.200" fontSize={['xs', 'sm', 'sm']} textAlign="center">
-        Postos JR - Todos os direitos reservados
+        Grupo JR - Todos os direitos reservados
       </Text>
       <Link href="https://flow.page/adrianknapp" passHref>
         <a target="_blank">
