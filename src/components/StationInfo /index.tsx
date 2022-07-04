@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type StationInfoProps = {
@@ -13,14 +13,29 @@ export function StationInfo({ title, description, icon }: StationInfoProps) {
       <Text
         as="h3"
         fontWeight="black"
-        fontSize="2xl"
+        fontSize={[
+          20,
+          22,
+          28,
+        ]}
         mb={3}
       >
         {title}
       </Text>
       <Flex gap={3}>
-        {icon}
-        {description}
+        {icon && (
+          <Box>
+            {icon}
+          </Box>
+        )}
+        <Text fontSize={[
+          12,
+          14,
+          18,
+        ]}
+        >
+          {description}
+        </Text>
       </Flex>
     </Flex>
   );

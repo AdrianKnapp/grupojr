@@ -21,7 +21,7 @@ export function StationDetails({ name, details }: StationDetailsProps) {
         3,
       ]}
     >
-      <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[16, 20, 24]} textAlign="center">
+      <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[14, 18, 24]} textAlign="center">
         {name}
       </Text>
       <Text fontWeight="medium" fontSize={[12, 14, 16]}>

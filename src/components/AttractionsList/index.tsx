@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 import { theme } from '../../styles/theme';
 import { AttractionProps } from '../../types/attraction';
 import { PageItem } from './PageItem/index.';
@@ -9,41 +9,31 @@ type AttractionsListProps = {
 
 export function AttractionsList({ attractions }: AttractionsListProps) {
   return (
-    <>
-      <Text
-        as="h3"
-        mt={8}
-        fontWeight="black"
-        fontSize="2xl"
-      >
-        Atrativos
-      </Text>
-      <Grid
-        templateColumns={[
-          'repeat(2, 1fr)',
-          'repeat(2, 1fr)',
-          'repeat(2, 1fr)',
-          'repeat(3, 1fr)',
-        ]}
-        gap={[
-          2,
-          3,
-          5,
-        ]}
-        as="section"
-        id="postos"
-        h="auto"
-        w="100%"
-        maxW={theme.container.width.desktop}
-        mt={3}
-        mx="auto"
-      >
-        {attractions.map((attraction) => (
-          <GridItem w="100%" key={attraction.id}>
-            <PageItem attraction={attraction} />
-          </GridItem>
-        ))}
-      </Grid>
-    </>
+    <Grid
+      templateColumns={[
+        'repeat(2, 1fr)',
+        'repeat(2, 1fr)',
+        'repeat(2, 1fr)',
+        'repeat(3, 1fr)',
+      ]}
+      mt={8}
+      gap={[
+        2,
+        3,
+        5,
+      ]}
+      as="section"
+      id="postos"
+      h="auto"
+      w="100%"
+      maxW={theme.container.width.desktop}
+      mx="auto"
+    >
+      {attractions.map((attraction) => (
+        <GridItem w="100%" key={attraction.id}>
+          <PageItem attraction={attraction} />
+        </GridItem>
+      ))}
+    </Grid>
   );
 }
