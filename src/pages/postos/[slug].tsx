@@ -22,7 +22,6 @@ type ProductComponentProps = {
 
 export default function PetrolStation({ station, banner, attractions }: ProductComponentProps) {
   const bannerImages = banner?.images?.data;
-  const { socialmedia } = station;
 
   return station ? (
     <>
@@ -61,10 +60,10 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
             description={station.local}
             icon={<BiMap fontSize={30} color={theme.colors.text} />}
           />
-          {socialmedia && (
+          {station?.socialmedia && (
             <StationInfo
               title="Redes sociais"
-              description={<IconsBox href={socialmedia} />}
+              description={<IconsBox href={station?.socialmedia} />}
               icon={null}
             />
           )}
