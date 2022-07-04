@@ -15,7 +15,11 @@ export default function Home({ banner, pages }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Postos JR</title>
+        <title>Postos | Grupo JR</title>
+        <meta
+          name="description"
+          content="GRUPO JR - Conheça nossos postos e veja detalhes e informações sobre os nossos serviços."
+        />
       </Head>
       {banner && <Hero images={banner.images.data} />}
       <PagesList pages={pages} />
