@@ -32,8 +32,8 @@ export function PageDetails({ name, local }: PageDetailsProps) {
       </Text>
       {local && (
         <Flex gap={3}>
-          <BiMap fontSize={30} color={theme.colors.text} />
-          <Text fontWeight="medium" fontSize={[16, 18, 20]}>
+          <BiMap fontSize={35} color={theme.colors.text} />
+          <Text fontWeight="medium" fontSize={[12, 14, 16]}>
             {local}
           </Text>
         </Flex>
