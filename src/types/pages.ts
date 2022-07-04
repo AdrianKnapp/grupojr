@@ -1,5 +1,5 @@
 import { AttractionProps } from './attraction';
-import { BannerProps } from './banner';
+import { BannerProps, ThumbnailProps } from './banner';
 
 export type PageProps = {
   id: number;
@@ -15,6 +15,9 @@ export type PageProps = {
     };
     attractions: {
       data: AttractionProps[];
-    }
+    };
+    thumbnail: {
+      data: ThumbnailProps;
+    };
   }
 }
