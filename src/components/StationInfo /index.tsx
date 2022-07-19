@@ -28,14 +28,14 @@ export function StationInfo({ title, description, icon }: StationInfoProps) {
             {icon}
           </Box>
         )}
-        <Text fontSize={[
+        <Box fontSize={[
           12,
           14,
           18,
         ]}
         >
           {description}
-        </Text>
+        </Box>
       </Flex>
     </Flex>
   );

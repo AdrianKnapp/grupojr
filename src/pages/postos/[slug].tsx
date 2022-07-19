@@ -2,6 +2,7 @@ import { Flex, SimpleGrid, Text } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { BiMap } from 'react-icons/bi';
+import { AiOutlinePhone } from 'react-icons/ai';
 import { AttractionsList } from '../../components/AttractionsList';
 import { Carousel } from '../../components/banners/Carousel';
 import { IconsBox } from '../../components/IconsBox';
@@ -56,13 +57,20 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
             description={station.local}
             icon={<BiMap fontSize={30} color={theme.colors.text} />}
           />
-          {station?.socialmedia && (
+          <SimpleGrid minChildWidth={['200px', '100px', '200px']} columns={2} spacing="20px">
+            {station?.socialmedia && (
+              <StationInfo
+                title="Redes sociais"
+                description={<IconsBox href={station?.socialmedia} />}
+                icon={null}
+              />
+            )}
             <StationInfo
-              title="Redes sociais"
-              description={<IconsBox href={station?.socialmedia} />}
-              icon={null}
+              title="Contato"
+              description={station.contact}
+              icon={<AiOutlinePhone fontSize={35} />}
             />
-          )}
+          </SimpleGrid>
         </SimpleGrid>
       </Flex>
     </>
