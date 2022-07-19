@@ -1,3 +1,4 @@
+import { Spacer } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import InfosPage from '../components/InfosPage';
@@ -20,9 +21,14 @@ export default function SobreNos({ images }: SobreNosProps) {
       </Head>
       <InfosPage
         title="Sobre nós"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         bannerImages={images}
-      />
+      >
+        O Grupo JR é uma rede de postos de combustíveis que tem como objetivo oferecer aos clientes uma experiência única em abastecimento e outros serviços, como troca de óleo, lavador, lubrificação, lavanderia, barbearia, academia, borracharia e outros mais. Nossos postos de combustíveis estão localizados em diversos pontos do RJ, ES e são facilmente encontrados em aplicativos de locomoção. Temos a confiança como um de nossos pilares. Por isso, prezamos por produtos versáteis e de qualidade, garantindo ao consumidor que seus automóveis receberão um combustível de procedência garantida.
+        <Spacer mt={4} />
+        Hoje contamos com 4 postos de combustíveis: Posto Cavil, Posto Caju, Posto JR Mimoso e Posto JR Tanguá. Ao longo da nossa história conseguimos conquistar algumas premiações: o Posto Caju foi eleito por 3 vezes o melhor posto do Brasil pela Petrobras, o Posto Cavil ganhou midas (melhor posto do brasil pela Ipiranga) na Categoria Urbano e o Posto JR Tanguá ganhou o midas na categoria Rodovia.
+        <Spacer mt={4} />
+        Estamos construindo uma grande história e contamos com você para fazer parte dela.
+      </InfosPage>
     </>
   );
 }

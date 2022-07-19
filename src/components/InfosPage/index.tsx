@@ -1,15 +1,16 @@
 import { Flex, Text } from '@chakra-ui/react';
+import { ReactNode } from 'react';
 import { theme } from '../../styles/theme';
 import { BannerImagesProps } from '../../types/banner';
 import { Carousel } from '../banners/Carousel';
 
 type InfosPageProps = {
   title: string;
-  description: string;
+  children: string | ReactNode;
   bannerImages?: BannerImagesProps[];
 }
 
-function InfosPage({ title, description, bannerImages }: InfosPageProps) {
+function InfosPage({ title, children, bannerImages }: InfosPageProps) {
   return (
     <Flex
       w="100%"
@@ -40,8 +41,8 @@ function InfosPage({ title, description, bannerImages }: InfosPageProps) {
         <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[20, 30, 40]}>
           {title}
         </Text>
-        <Text fontWeight="medium" fontSize={[14, 16, 20]}>
-          {description}
+        <Text fontWeight="medium" fontSize={[11, 14, 16]}>
+          {children}
         </Text>
       </Flex>
     </Flex>
