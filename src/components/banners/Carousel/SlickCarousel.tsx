@@ -25,6 +25,7 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
     arrows: true,
     adaptiveHeight: true,
     pauseOnHover: true,
+    pauseOnFocus: true,
     afterChange: (currentIndex) => setActiveSlide(currentIndex + 1),
   };
 
