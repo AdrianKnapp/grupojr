@@ -1,6 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import FsLightbox from 'fslightbox-react';
+import { useState } from 'react';
 import { BannerImagesProps } from '../../../types/banner';
 
 type SlickCarouselProps = {
@@ -9,6 +11,9 @@ type SlickCarouselProps = {
 }
 
 export function SlickCarousel({ images, height }: SlickCarouselProps) {
+  const [toggleViewImage, setToggleViewImage] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(1);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -20,6 +25,7 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
     arrows: true,
     adaptiveHeight: true,
     pauseOnHover: true,
+    afterChange: (currentIndex) => setActiveSlide(currentIndex + 1),
   };
 
   return (
@@ -41,7 +47,13 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
           const url = formats?.large?.url || formats?.medium?.url || attributes.url;
 
           return (
-            <Flex key={id} w="100%" h={height} position="relative">
+            <Flex
+              key={id}
+              w="100%"
+              h={height}
+              position="relative"
+              onClick={() => setToggleViewImage(!toggleViewImage)}
+            >
               <Image
                 src={url}
                 alt="Banner inicial"
@@ -52,6 +64,13 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
           );
         })}
       </Slider>
+      {images && (
+        <FsLightbox
+          toggler={toggleViewImage}
+          sources={images.map((image) => image.attributes.url)}
+          slide={activeSlide}
+        />
+      )}
     </Box>
   );
 }
