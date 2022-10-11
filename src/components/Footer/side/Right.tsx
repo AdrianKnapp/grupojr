@@ -10,7 +10,7 @@ export function Right() {
         Contatos
       </Header>
       <TextInfo>
-        Telefone e Whatsapp: (022) 3833-9170
+        Telefone: (022) 3833-9170
       </TextInfo>
       <TextInfo>
         E-mail: escritoriobj.postos@hotmail.com
