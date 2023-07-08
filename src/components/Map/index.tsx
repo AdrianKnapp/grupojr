@@ -17,6 +17,16 @@ export default function Map() {
       title: 'Hello World!',
     });
     console.log('🚀 ~ file: index.tsx:29 ~ renderMarkers ~ marker:', marker);
+
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}&travelmode=driving`;
+
+    const infowindow = new maps.InfoWindow({
+      content: `<a href=${url} target="_blank">Ver rotas</a>`,
+    });
+
+    marker.addListener('click', () => {
+      infowindow.open(map, marker);
+    });
   }
 
   return (
