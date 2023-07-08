@@ -16,7 +16,7 @@ export function AttractionsList({ attractions }: AttractionsListProps) {
         'repeat(2, 1fr)',
         'repeat(3, 1fr)',
       ]}
-      mt={8}
+      mt={4}
       gap={[
         2,
         3,

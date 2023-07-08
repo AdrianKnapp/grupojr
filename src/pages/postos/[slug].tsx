@@ -1,12 +1,9 @@
-import { Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import { BiMap } from 'react-icons/bi';
-import { AiOutlinePhone } from 'react-icons/ai';
 import { AttractionsList } from '../../components/AttractionsList';
 import { Carousel } from '../../components/banners/Carousel';
-import { IconsBox } from '../../components/IconsBox';
-import { StationInfo } from '../../components/StationInfo ';
+import { StationDetails } from '../../components/StationDetails';
 import api from '../../services/api';
 import { theme } from '../../styles/theme';
 import { AttractionProps } from '../../types/attraction';
@@ -24,7 +21,9 @@ type ProductComponentProps = {
 export default function PetrolStation({ station, banner, attractions }: ProductComponentProps) {
   const bannerImages = banner?.images?.data;
 
-  return station ? (
+  if (!station) return null;
+
+  return (
     <>
       <Head>
         <title>
@@ -48,33 +47,16 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         {bannerImages && (
           <Carousel images={bannerImages} />
         )}
+        <StationDetails station={station} />
+        <Text as="h3" fontWeight="black" fontSize="2xl" mt={8}>
+          Atrativos
+        </Text>
         {attractions.length > 0 && (
           <AttractionsList attractions={attractions} />
         )}
-        <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={8}>
-          <StationInfo
-            title="Localização"
-            description={station.local}
-            icon={<BiMap fontSize={30} color={theme.colors.text} />}
-          />
-          <SimpleGrid minChildWidth={['200px', '100px', '200px']} columns={2} spacing="20px">
-            {station?.socialmedia && (
-              <StationInfo
-                title="Redes sociais"
-                description={<IconsBox href={station?.socialmedia} />}
-                icon={null}
-              />
-            )}
-            <StationInfo
-              title="Contato"
-              description={station.contact}
-              icon={<AiOutlinePhone fontSize={35} />}
-            />
-          </SimpleGrid>
-        </SimpleGrid>
       </Flex>
     </>
-  ) : null;
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
