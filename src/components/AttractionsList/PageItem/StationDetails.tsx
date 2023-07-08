@@ -1,5 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { theme } from '../../../styles/theme';
+import Button from '../../Button';
 
 type StationDetailsProps = {
   name: string;
@@ -10,18 +11,13 @@ export function StationDetails({ name, details }: StationDetailsProps) {
   return (
     <Flex
       padding={[
-        1,
-        1,
+        2,
+        2,
         2,
       ]}
       direction="column"
-      gap={[
-        0,
-        2,
-        3,
-      ]}
     >
-      <Text as="h3" color={theme.colors.text} fontWeight="bold" fontSize={[14, 18, 20]} textAlign="center">
+      <Text as="h3" color={theme.colors.text} fontWeight="medium" fontSize={[14, 16, 16]} textAlign="center">
         {name}
       </Text>
       {details ? (
@@ -29,6 +25,7 @@ export function StationDetails({ name, details }: StationDetailsProps) {
           {details}
         </Text>
       ) : null}
+      <Button />
     </Flex>
   );
 }

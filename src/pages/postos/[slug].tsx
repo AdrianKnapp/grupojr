@@ -38,7 +38,12 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         direction="column"
         w="100%"
         maxW={theme.container.width.desktop}
-        px={theme.container.padding.desktop}
+        px={[
+          theme.container.padding.mobile,
+          theme.container.padding.mobile,
+          theme.container.padding.tablet,
+          theme.container.padding.desktop,
+        ]}
         mx="auto"
       >
         <Text as="h1" fontWeight="black" fontSize={['2xl', '2xl', '3xl']} py={4}>

@@ -1,6 +1,7 @@
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { BiMap } from 'react-icons/bi';
 import { theme } from '../../../styles/theme';
+import Button from '../../Button';
 
 type PageDetailsProps = {
   name: string;
@@ -15,7 +16,7 @@ export function PageDetails({ name, local }: PageDetailsProps) {
       padding={[
         3,
         3,
-        5,
+        4,
       ]}
     >
       <Flex
@@ -26,31 +27,22 @@ export function PageDetails({ name, local }: PageDetailsProps) {
           as="h3"
           color={theme.colors.text}
           fontWeight="extrabold"
-          fontSize={[18, 22, 26]}
+          fontSize={[18, 22, 24]}
         >
           {name}
         </Text>
         {local && (
-        <Flex gap={3}>
-          <BiMap fontSize={35} color={theme.colors.text} />
-          <Text fontWeight="medium" fontSize={[12, 14, 16]}>
+        <Flex gap={2} alignItems="center">
+          <Box>
+            <BiMap fontSize={20} color={theme.colors.text} />
+          </Box>
+          <Text fontWeight="medium" fontSize={[12, 14, 14]}>
             {local}
           </Text>
         </Flex>
         )}
       </Flex>
-      <Button
-        fontSize={[14]}
-        height="auto"
-        padding={[
-          3,
-          3,
-          3,
-        ]}
-        mt={[4, 0]}
-      >
-        Ver mais
-      </Button>
+      <Button />
     </Flex>
   );
 }
