@@ -3,11 +3,56 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import FsLightbox from 'fslightbox-react';
 import { useState } from 'react';
+import { BiChevronRight } from 'react-icons/bi';
 import { BannerImagesProps } from '../../../types/banner';
 
 type SlickCarouselProps = {
   images: BannerImagesProps[];
   height: number;
+}
+
+function Arrow(props: any) {
+  const {
+    className, style, onClick, isPrev = false,
+  } = props;
+  return (
+    <Box
+      className={className}
+      style={{ ...style }}
+      onClick={onClick}
+      _after={{
+        content: '""',
+      }}
+      _before={{
+        content: '""',
+        color: 'transparent',
+      }}
+      borderRadius="full"
+      borderStyle="solid"
+      borderWidth={2}
+      borderColor="gray.800"
+      bg="white"
+      color="gray.800"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      h={8}
+      w={8}
+      _hover={{
+        color: 'gray.800',
+        bg: 'gray.200',
+      }}
+      transition="all 0.2s ease-in-out"
+      boxShadow="0px 0px 10px 0px rgba(0,0,0,0.4)"
+    >
+      <BiChevronRight
+        fontSize={26}
+        style={{
+          transform: isPrev ? 'rotate(180deg)' : 'rotate(0deg)',
+        }}
+      />
+    </Box>
+  );
 }
 
 export function SlickCarousel({ images, height }: SlickCarouselProps) {
@@ -26,6 +71,8 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
     adaptiveHeight: true,
     pauseOnHover: true,
     pauseOnFocus: true,
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow isPrev />,
     afterChange: (currentIndex) => setActiveSlide(currentIndex + 1),
   };
 
@@ -33,9 +80,6 @@ export function SlickCarousel({ images, height }: SlickCarouselProps) {
     <Box
       w={[
         '100%',
-        '100%',
-        '80%',
-        '90%',
       ]}
       h="100%"
       mx="auto"
