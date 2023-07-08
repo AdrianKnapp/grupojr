@@ -8,6 +8,12 @@
   font-size: 40px;
 }
 
+.slick-slide {
+  & > div {
+    display: flex;
+  }
+}
+
 .slick-next {
   right: 20px;
   top: 50%;

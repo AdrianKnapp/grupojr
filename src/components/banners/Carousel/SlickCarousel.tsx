@@ -43,7 +43,7 @@ function Arrow(props: any) {
         bg: 'gray.200',
       }}
       transition="all 0.2s ease-in-out"
-      boxShadow="0px 0px 10px 0px rgba(0,0,0,0.4)"
+      boxShadow="0px 0px 15px 0px rgba(0,0,0,0.4)"
     >
       <BiChevronRight
         fontSize={26}

@@ -13,7 +13,7 @@ type StationInfoProps = {
 
 export function StationDetails({ station }: StationInfoProps) {
   return (
-    <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={8}>
+    <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={4}>
       <Map />
       <Flex direction="column" gap={4}>
         <StationInfo
