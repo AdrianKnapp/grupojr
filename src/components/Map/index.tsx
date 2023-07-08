@@ -4,6 +4,8 @@ import GoogleMapReact from 'google-map-react';
 const LAT = -21.0717996215792;
 const LNG = -41.22712832327406;
 
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
 export default function Map() {
   function renderMarkers(map, maps) {
     const marker = new maps.Marker({
@@ -26,7 +28,7 @@ export default function Map() {
           lng: LNG,
         }}
         zoom={11}
-        bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY }}
+        bootstrapURLKeys={{ key: API_KEY }}
         onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
       />
     </div>
