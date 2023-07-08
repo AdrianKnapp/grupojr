@@ -1,18 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
-function AnyReactComponent({ text, lat, lng }: {
-  text: string;
-  lat: number;
-  lng: number;
-}) {
-  return (
-    <div>
-      <p>A</p>
-    </div>
-  );
-}
-
 const LAT = -21.0717996215792;
 const LNG = -41.22712832327406;
 
@@ -38,7 +26,7 @@ export default function Map() {
           lng: LNG,
         }}
         zoom={11}
-        bootstrapURLKeys={{ key: 'AIzaSyAjmw1zIcUuVyZPX6B7LEIvXzyqn4d2bnw' }}
+        bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY }}
         onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
       />
     </div>
