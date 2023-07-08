@@ -12,7 +12,7 @@ export function Hero({ images }: HeroProps) {
   const BannerHeight = 400;
 
   return (
-    <Flex as="section" w={theme.container.width.full} h={BannerHeight} position="relative" overflow="hidden">
+    <Flex as="section" w={theme.container.width.full} h={[200, 200, 300, 400]} position="relative" overflow="hidden">
       <SlickCarousel images={images} height={BannerHeight} />
       <Text
         as="h1"
@@ -23,8 +23,10 @@ export function Hero({ images }: HeroProps) {
         transform="translate(-50%, -50%)"
         color="white"
         fontSize={[
-          35,
-          50,
+          24,
+          24,
+          24,
+          40,
         ]}
         width={[
           '90%',

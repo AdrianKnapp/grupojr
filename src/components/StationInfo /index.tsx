@@ -21,7 +21,7 @@ export function StationInfo({ title, description, icon }: StationInfoProps) {
       >
         {title}
       </Text>
-      <Flex gap={2}>
+      <Flex gap={2} alignItems="center">
         {icon && (
           <Box>
             {icon}
