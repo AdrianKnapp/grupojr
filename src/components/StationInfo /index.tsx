@@ -1,6 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import Map from '../Map';
 
 type StationInfoProps = {
   title: string;
@@ -38,7 +37,6 @@ export function StationInfo({ title, description, icon }: StationInfoProps) {
           {description}
         </Box>
       </Flex>
-      <Map />
     </Flex>
   );
 }
