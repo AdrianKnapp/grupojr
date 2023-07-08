@@ -14,23 +14,22 @@ export function StationInfo({ title, description, icon }: StationInfoProps) {
         as="h3"
         fontWeight="black"
         fontSize={[
+          16,
+          18,
           20,
-          22,
-          28,
         ]}
-        mb={3}
       >
         {title}
       </Text>
-      <Flex gap={3}>
+      <Flex gap={2}>
         {icon && (
           <Box>
             {icon}
           </Box>
         )}
         <Box fontSize={[
-          12,
           14,
+          16,
           18,
         ]}
         >

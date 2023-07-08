@@ -41,7 +41,7 @@ export default function PetrolStation({ station, banner, attractions }: ProductC
         px={theme.container.padding.desktop}
         mx="auto"
       >
-        <Text as="h1" fontWeight="black" fontSize="3xl" py={4}>
+        <Text as="h1" fontWeight="black" fontSize={['2xl', '2xl', '3xl']} py={4}>
           {station.name}
         </Text>
         {bannerImages && (

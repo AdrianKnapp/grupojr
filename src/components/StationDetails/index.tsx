@@ -14,15 +14,13 @@ type StationInfoProps = {
 export function StationDetails({ station }: StationInfoProps) {
   return (
     <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={8}>
-      <Flex direction="column">
+      <Map />
+      <Flex direction="column" gap={4}>
         <StationInfo
           title="Localização"
           description={station.local}
-          icon={<BiMap fontSize={30} color={theme.colors.text} />}
+          icon={<BiMap fontSize={25} color={theme.colors.text} />}
         />
-        <Map />
-      </Flex>
-      <SimpleGrid minChildWidth={['200px', '100px', '200px']} columns={2} spacing="20px">
         {station?.socialmedia && (
         <StationInfo
           title="Redes sociais"
@@ -33,9 +31,9 @@ export function StationDetails({ station }: StationInfoProps) {
         <StationInfo
           title="Contato"
           description={station.contact}
-          icon={<AiOutlinePhone fontSize={35} />}
+          icon={<AiOutlinePhone fontSize={25} />}
         />
-      </SimpleGrid>
+      </Flex>
     </SimpleGrid>
   );
 }

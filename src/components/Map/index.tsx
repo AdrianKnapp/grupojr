@@ -1,8 +1,9 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import { Box } from '@chakra-ui/react';
 
-const LAT = -21.0717996215792;
-const LNG = -41.22712832327406;
+const LAT = -21.07214690742099;
+const LNG = -41.227204891227586;
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
@@ -16,31 +17,23 @@ export default function Map() {
       map,
       title: 'Hello World!',
     });
-    console.log('🚀 ~ file: index.tsx:29 ~ renderMarkers ~ marker:', marker);
-
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}&travelmode=driving`;
-
-    const infowindow = new maps.InfoWindow({
-      content: `<a href=${url} target="_blank">Ver rotas</a>`,
-    });
 
     marker.addListener('click', () => {
-      infowindow.open(map, marker);
+      window.open(`https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}&travelmode=driving`, '_blank');
     });
   }
 
   return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: '300px', width: '100%' }}>
+    <Box h={[150, 150, 200, 250]} w="100%" borderRadius={5} overflow="hidden">
       <GoogleMapReact
         center={{
           lat: LAT,
           lng: LNG,
         }}
-        zoom={11}
+        zoom={10}
         bootstrapURLKeys={{ key: API_KEY }}
         onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
       />
-    </div>
+    </Box>
   );
 }

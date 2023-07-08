@@ -10,9 +10,9 @@ export function StationDetails({ name, details }: StationDetailsProps) {
   return (
     <Flex
       padding={[
+        1,
+        1,
         2,
-        3,
-        5,
       ]}
       direction="column"
       gap={[
@@ -21,12 +21,14 @@ export function StationDetails({ name, details }: StationDetailsProps) {
         3,
       ]}
     >
-      <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[14, 18, 24]} textAlign="center">
+      <Text as="h3" color={theme.colors.text} fontWeight="bold" fontSize={[14, 18, 20]} textAlign="center">
         {name}
       </Text>
-      <Text fontWeight="medium" fontSize={[12, 14, 16]}>
-        {details}
-      </Text>
+      {details ? (
+        <Text fontWeight="medium" fontSize={[12, 14, 16]}>
+          {details}
+        </Text>
+      ) : null}
     </Flex>
   );
 }
