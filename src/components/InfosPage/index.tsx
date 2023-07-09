@@ -34,7 +34,7 @@ function InfosPage({ title, children, bannerImages }: InfosPageProps) {
         <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[20, 30, 40]}>
           {title}
         </Text>
-        <Text fontWeight="medium" fontSize={[11, 14, 16]}>
+        <Text fontWeight="medium" fontSize={[14, 14, 16]}>
           {children}
         </Text>
       </Flex>
