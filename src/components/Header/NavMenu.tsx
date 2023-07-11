@@ -39,7 +39,7 @@ export function NavMenu() {
         cursor="pointer"
         h="100%"
         width="100%"
-        d="flex"
+        display="flex"
         alignItems="center"
         px={3}
         color={theme.colors.text}
@@ -52,7 +52,7 @@ export function NavMenu() {
       <ListItem
         cursor="pointer"
         h="100%"
-        d="flex"
+        display="flex"
         alignItems="center"
         px={3}
         color={theme.colors.text}
@@ -96,7 +96,8 @@ export function NavMenu() {
               aria-label="Options"
               icon={<CgMenu />}
               variant="outline"
-              fontSize={24}
+              borderWidth={0}
+              fontSize={26}
             />
             <MenuList zIndex={2} boxShadow=" 0px 0px 10px 0px rgba(0,0,0,0.3)">
               <UnorderedList margin={0} w="100%">

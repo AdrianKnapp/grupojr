@@ -1,5 +1,6 @@
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import Image from 'next/image';
+import { BsFullscreen } from 'react-icons/bs';
 import { BannerImagesProps } from '../../../types/banner';
 
 type StationThumbType = {
@@ -20,12 +21,16 @@ export function StationThumb({ image }: StationThumbType) {
     <Flex
       width="100%"
       height={[
-        150,
+        100,
+        200,
+        200,
         230,
-        300,
       ]}
       position="relative"
     >
+      <Box position="absolute" top={2} right={2} zIndex={20}>
+        <BsFullscreen fontSize={16} color="white" />
+      </Box>
       <Image
         src={imageSrc}
         alt="Imagem da atração"

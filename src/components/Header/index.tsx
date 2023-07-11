@@ -19,7 +19,12 @@ export function Header() {
         w="100%"
         maxW={theme.container.width.desktop}
         align="center"
-        px={theme.container.padding.desktop}
+        px={[
+          theme.container.padding.mobile,
+          theme.container.padding.mobile,
+          theme.container.padding.tablet,
+          theme.container.padding.desktop,
+        ]}
         justify="space-between"
       >
         <Logo />
