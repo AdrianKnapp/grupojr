@@ -8,13 +8,22 @@
   font-size: 40px;
 }
 
+.slick-slide {
+  & > div {
+    display: flex;
+  }
+}
+
 .slick-next {
-  right: -30px;
+  right: 20px;
+  top: 50%;
   z-index: 9999;
 }
 
 .slick-prev {
-  left: -50px;
+  left: 20px;
+  top: 50%;
+  z-index: 9999;
 }
 
 .menuMobileItem {

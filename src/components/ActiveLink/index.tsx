@@ -48,7 +48,7 @@ export function ActiveLink({
         {cloneElement(children, {
           fontWeight: isActive ? 'black' : 'medium',
           _hover: {
-            opacity: !isActive ? '0.5' : '1',
+            opacity: !isActive ? '0.6' : '1',
           },
         })}
       </Flex>

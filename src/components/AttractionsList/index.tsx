@@ -13,10 +13,10 @@ export function AttractionsList({ attractions }: AttractionsListProps) {
       templateColumns={[
         'repeat(2, 1fr)',
         'repeat(2, 1fr)',
-        'repeat(2, 1fr)',
         'repeat(3, 1fr)',
+        'repeat(4, 1fr)',
       ]}
-      mt={8}
+      mt={4}
       gap={[
         2,
         3,

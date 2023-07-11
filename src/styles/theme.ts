@@ -17,7 +17,7 @@ export const theme = {
       full: 0,
       desktop: 6,
       tablet: 4,
-      mobile: 2,
+      mobile: 3,
     },
   },
 };

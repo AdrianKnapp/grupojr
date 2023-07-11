@@ -26,22 +26,15 @@ function InfosPage({ title, children, bannerImages }: InfosPageProps) {
       gap={5}
     >
       {bannerImages && (
-        <Flex px={[
-          0,
-          0,
-          12,
-          12,
-        ]}
-        >
+        <Flex>
           <Carousel images={bannerImages} customDesktopHeight={600} customMobileHeight={250} />
         </Flex>
-
       )}
       <Flex direction="column" gap={3}>
         <Text as="h3" color={theme.colors.text} fontWeight="extrabold" fontSize={[20, 30, 40]}>
           {title}
         </Text>
-        <Text fontWeight="medium" fontSize={[11, 14, 16]}>
+        <Text fontWeight="medium" fontSize={[14, 14, 16]}>
           {children}
         </Text>
       </Flex>
