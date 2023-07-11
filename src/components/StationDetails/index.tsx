@@ -14,7 +14,9 @@ type StationInfoProps = {
 export function StationDetails({ station }: StationInfoProps) {
   return (
     <SimpleGrid minChildWidth={['200px', '300px', '400px']} columns={2} spacing="20px" mt={4}>
-      <Map />
+      {station.latitude && station.longitude ? (
+        <Map latitute={+station.latitude} longitude={+station.longitude} />
+      ) : null}
       <Flex direction="column" gap={4}>
         <StationInfo
           title="Localização"

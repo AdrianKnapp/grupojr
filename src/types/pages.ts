@@ -20,5 +20,7 @@ export type PageProps = {
       data: ThumbnailProps;
     };
     socialmedia: string;
+    latitude: string;
+    longitude: string;
   }
 }
