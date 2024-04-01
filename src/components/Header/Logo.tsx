@@ -13,7 +13,6 @@ export function Logo() {
           height={662}
           layout="responsive"
         />
-        <h1 className="sr-only">Grupo JR Postos</h1>
         <h2 className="sr-only">
           Um grupo de empresas focadas em levar combustíveis de qualidade para
           você!

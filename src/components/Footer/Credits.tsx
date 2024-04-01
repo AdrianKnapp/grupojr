@@ -14,18 +14,20 @@ export function Credits() {
         theme.container.padding.mobile,
         theme.container.padding.desktop,
       ]}
-      direction={[
-        'column',
-        'column',
-        'row',
-      ]}
+      direction={['column', 'column', 'row']}
     >
       <Text color="gray.200" fontSize={['xs', 'sm', 'sm']} textAlign="center">
         Grupo JR - Todos os direitos reservados
       </Text>
-      <Link href="https://linktr.ee/adrianknapp" passHref>
+      <Link href="https://adrianknapp.dev/" passHref>
         <a target="_blank">
-          <Text color="gray.200" fontSize={['xs', 'sm', 'sm']} cursor="pointer" textDecoration="underline" textAlign="center">
+          <Text
+            color="gray.200"
+            fontSize={['xs', 'sm', 'sm']}
+            cursor="pointer"
+            textDecoration="underline"
+            textAlign="center"
+          >
             Desenvolvido por Adrian Knapp
           </Text>
         </a>
